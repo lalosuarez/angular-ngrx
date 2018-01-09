@@ -1,4 +1,5 @@
 <h3>TODOS</h3>
+<input type="button" (click)="onAddTodoClick()" value="Add todo">
 <ul>
     <li *ngFor="let todo of (todoState | async).todos; let i = index">
         {{ todo.description }}

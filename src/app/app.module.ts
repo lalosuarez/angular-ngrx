@@ -18,7 +18,7 @@ import { TodoComponent } from './components/todo/todo.component';
     StoreModule.forRoot({
       counter: counterReducer,
       todo: todoReducer
-  })
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

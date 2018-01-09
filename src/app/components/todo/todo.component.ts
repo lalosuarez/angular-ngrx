@@ -2,6 +2,8 @@ import { Component } from "@angular/core";
 import { Store } from '@ngrx/store';
 import { Observable } from "rxjs/Observable";
 import * as fromTodo from './store/todo.reducer';
+import * as TodoActions from './store/todo.actions';
+import { Todo } from "./todo.model";
 
 @Component({
     selector: 'todo',
@@ -15,6 +17,9 @@ export class TodoComponent {
 
     ngOnInit() {
         this.todoState = this.store.select('todo');
-        console.log('todoState', this.todoState);
+    }
+
+    onAddTodoClick() {
+        this.store.dispatch(new TodoActions.AddTodo(new Todo('Hardcoded TODO added')));
     }
 }

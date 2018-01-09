@@ -6,9 +6,7 @@ export const ADD_TODO = 'ADD_TODO'
 
 export class AddTodo implements Action {
     readonly type = ADD_TODO;
-    payload: Todo;
-
-    constructor(public todo: Todo) { }
+    constructor(public payload: Todo) { }
 }
 
 export type Actions = AddTodo;
