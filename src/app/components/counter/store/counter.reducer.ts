@@ -1,11 +1,11 @@
 import { Action } from '@ngrx/store';
 import * as CounterActions from './counter.actions';
 
-export interface AppState {
+export interface State {
 	counter: number;
 }
 
-export function counterReducer(state: number = 0, action: CounterActions.Actions) {
+export function counterReducer(state = 0, action: CounterActions.Actions) {
 	switch (action.type) {
 		case CounterActions.INCREMENT:
 			return state + 1;
