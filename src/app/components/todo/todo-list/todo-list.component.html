@@ -1,5 +1,7 @@
+<h5 *ngIf="(todoState | async).todos.length === 0">TODO list is empty!</h5>
 <ul>
     <li *ngFor="let todo of (todoState | async).todos; let i = index">
         {{ todo.description }}
+        <button (click)="onDeleteClick(i)">delete</button>
     </li>
 </ul>

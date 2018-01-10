@@ -12,6 +12,7 @@ import { Todo } from "./todo.model";
 export class TodoComponent {
 
     todoState: Observable<fromTodo.State>
+    description: string = '';
 
     constructor(private store: Store<{todo: fromTodo.State}>) { }
 
@@ -20,6 +21,7 @@ export class TodoComponent {
     }
 
     onAddTodoClick() {
-        this.store.dispatch(new TodoActions.AddTodo(new Todo('Hardcoded TODO added')));
+        let tempDesc = this.description.trim() === '' ? 'Undefined description' : this.description.trim();
+        this.store.dispatch(new TodoActions.AddTodo(new Todo(tempDesc)));
     }
 }

@@ -4,22 +4,18 @@ import { StoreModule } from '@ngrx/store';
 import { AppComponent } from './app.component';
 import { counterReducer } from './components/counter/store/counter.reducer';
 import { CounterComponent } from './components/counter/counter.component';
-import { todoReducer } from './components/todo/store/todo.reducer';
-import { TodoComponent } from './components/todo/todo.component';
-import { TodoListComponent } from './components/todo/todo-list/todo-list.component';
+import { TodoModule } from './components/todo/todo.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CounterComponent,
-    TodoComponent,
-    TodoListComponent
+    CounterComponent
   ],
   imports: [
     BrowserModule,
+    TodoModule,
     StoreModule.forRoot({
-      counter: counterReducer,
-      todo: todoReducer
+      counter: counterReducer
     })
   ],
   providers: [],

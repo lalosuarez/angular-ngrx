@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { Store } from '@ngrx/store';
 import { Observable } from "rxjs/Observable";
 import * as fromTodo from '../store/todo.reducer';
+import * as TodoActions from '../store/todo.actions';
 
 @Component({
     selector: 'todo-list',
@@ -15,5 +16,9 @@ export class TodoListComponent {
 
     ngOnInit() {
         this.todoState = this.store.select('todo');
+    }
+
+    onDeleteClick(index) {
+        this.store.dispatch(new TodoActions.DeleteTodo(index));
     }
 }
